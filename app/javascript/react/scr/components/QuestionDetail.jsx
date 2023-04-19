@@ -1,5 +1,4 @@
 import * as React from 'react'
-// import { useState } from 'react'
 import * as ReactDOM from 'react-dom'
 
 class QuestionDetail extends React.Component {
