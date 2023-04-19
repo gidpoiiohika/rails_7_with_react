@@ -10,10 +10,6 @@ const Welcome = () => {
   )
 }
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   ReactDOM.render(<Welcome />, document.getElementById('welcome'))
-// })
-
 const root = ReactDOM.createRoot(document.getElementById('welcome'))
 root.render(
   <Welcome />
