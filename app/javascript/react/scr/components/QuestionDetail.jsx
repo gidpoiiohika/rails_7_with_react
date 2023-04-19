@@ -3,8 +3,6 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
 class QuestionDetail extends React.Component {
-  // const [likeCount, setLikeCount ] = useState(0)
-
   constructor(props) {
     super(props)
     this.state = { 
