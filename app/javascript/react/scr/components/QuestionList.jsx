@@ -1,27 +1,28 @@
 import * as React from 'react'
+import { useState, useEffect } from 'react'
 import * as ReactDOM from 'react-dom'
 import QuestionDetail from './QuestionDetail'
 
 const QuestionList = () => {
-  const QuestionList = [
-      {   id: 1,
-          title: 'test title 1',
-          tag: 'Ruby'
-      },
-      {   id: 2,
-          title: 'test title 2',
-          tag: 'Ruby'
-      },
-      {   id: 3,
-          title: 'test title 3',
-          tag: 'Ruby'
-      }
-  ]
+  const [questionsList, setQuestionsList] = useState([])
+  const questionsUrl = 'http://localhost:3000/api/v1/questions'
+
+  const fetchQuestionList = () => {
+    fetch(questionsUrl)
+      .then(response => response.json())
+      .then((data) => {
+        setQuestionsList(data)
+      })
+  }
+
+  useEffect(() => {
+    fetchQuestionList()
+  }, [])
 
   return(
     <div className='row'>
       <div className='col-lg-10 mx-auto'>
-        {QuestionList.map((question) =>
+        {questionsList.map((question) =>
           <QuestionDetail question={question} key={question.id} />
         )}
       </div>
