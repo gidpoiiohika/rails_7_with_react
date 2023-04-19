@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom'
 import QuestionDetail from './QuestionDetail'
 
 const QuestionList = () => {
-  const questionList = [
+  const QuestionList = [
       {   id: 1,
           title: 'test title 1',
           tag: 'Ruby'
@@ -21,8 +21,8 @@ const QuestionList = () => {
   return(
     <div className='row'>
       <div className='col-lg-10 mx-auto'>
-        {questionList.map((question) =>
-          <QuestionDetail question={question} key={question.id}/>
+        {QuestionList.map((question) =>
+          <QuestionDetail question={question} key={question.id} />
         )}
       </div>
     </div>
